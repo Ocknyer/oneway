@@ -2,14 +2,20 @@
 'use client';
 
 import NaverMap from '@/components/NaverMap';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const router = useRouter();
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const onClickToReservation = () => {
+    router.push('reservation');
+  };
 
   return (
     mounted && (
@@ -29,6 +35,9 @@ export default function Home() {
           <p>예매: 10,000₩ / 현매: 12,000₩</p>
           <p>수용인원</p>
           <p>60명 / 전석 스탠딩</p>
+          <button className='bg-white' onClick={onClickToReservation}>
+            예매하기
+          </button>
         </section>
         <section className='mt-3'>
           <div className='mt-3'>
