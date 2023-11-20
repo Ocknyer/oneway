@@ -10,8 +10,8 @@ export default function Home() {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    sessionStorage.setItem('isBooked', 'false');
     setMounted(true);
+    sessionStorage.setItem('isBooked', 'false');
   }, []);
 
   const onClickToReservation = () => {

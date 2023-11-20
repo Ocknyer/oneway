@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 const Reservation = () => {
   const [time, setTime] = useState(new Date());
   const [dataList, setDataList] = useState<any>([]);
+  // const [mounted, setMounted] = useState<boolean>(false);
 
   const json = typeof window !== 'undefined' ? sessionStorage.getItem('isBooked') : null;
   const isBooked = json && JSON.parse(json);
@@ -41,6 +42,7 @@ const Reservation = () => {
   };
 
   useEffect(() => {
+    // setMounted(true);
     getReserveList();
   }, []);
 

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const SetList = () => {
+  //   const [mounted, setMounted] = useState<boolean>(false);
+
+  //   useEffect(() => {
+  //     setMounted(true);
+  //   }, []);
+
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <section className='mt-3'>
