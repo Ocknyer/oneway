@@ -43,7 +43,7 @@ const Reservation = () => {
     }
 
     if (name === 'count') {
-      const regex = /^[0-9]{0,1}$/;
+      const regex = /^[1-3]{0,1}$/;
       if (regex.test(e.target.value)) {
         setInputs({ ...inputs, count: e.target.value });
       }
@@ -108,44 +108,47 @@ const Reservation = () => {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <form className='flex flex-col gap-2'>
-        <label htmlFor='name'>성함</label>
-        <input
-          id='name'
-          name='name'
-          value={name}
-          type='text'
-          placeholder='ex) 홍길동'
-          onChange={handleData}
-          required
-        />
-        <label htmlFor='phone_number'>전화번호</label>
-        <input
-          id='phone_number'
-          name='phone_number'
-          value={phone_number}
-          type='text'
-          placeholder='- 없이 입력하세요'
-          onChange={handleData}
-          required
-        />
-        <label htmlFor='count'>예매 장수</label>
-        <input
-          id='count'
-          name='count'
-          value={count}
-          max={3}
-          min={1}
-          type='text'
-          placeholder='ex) 3'
-          onChange={handleData}
-          required
-        />
-        <button type='submit' onClick={onClickReserve}>
-          예매하기
-        </button>
-      </form>
-      {isBooked ? <CompleteSection /> : null}
+      {!isBooked ? (
+        <form className='flex flex-col gap-2'>
+          <label htmlFor='name'>성함</label>
+          <input
+            id='name'
+            name='name'
+            value={name}
+            type='text'
+            placeholder='ex) 홍길동'
+            onChange={handleData}
+            required
+          />
+          <label htmlFor='phone_number'>전화번호</label>
+          <input
+            id='phone_number'
+            name='phone_number'
+            value={phone_number}
+            type='text'
+            placeholder='- 없이 입력하세요'
+            onChange={handleData}
+            required
+          />
+          <label htmlFor='count'>예매 장수</label>
+          <input
+            id='count'
+            name='count'
+            value={count}
+            max={3}
+            min={1}
+            type='text'
+            placeholder='ex) 3'
+            onChange={handleData}
+            required
+          />
+          <button type='submit' onClick={onClickReserve}>
+            예매하기
+          </button>
+        </form>
+      ) : (
+        <CompleteSection />
+      )}
     </main>
   );
 };
