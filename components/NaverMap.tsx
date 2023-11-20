@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 const NaverMap = () => {
   useEffect(() => {
+    if (!naver) return;
+
     const location = new naver.maps.LatLng(37.5580297, 126.935877);
 
     const map = new naver.maps.Map('map', {
