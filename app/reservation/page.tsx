@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import CompleteSection from '@/components/CompleteSection';
@@ -23,7 +24,6 @@ const Reservation = () => {
 
   const json = typeof window !== 'undefined' ? sessionStorage.getItem('isBooked') : null;
   const isBooked = json && JSON.parse(json);
-  console.log(isBooked);
 
   const [inputs, setInputs] = useState<Input>({
     name: '',
@@ -77,10 +77,18 @@ const Reservation = () => {
     const q = query(collection(fireStore, 'ticketholder'), orderBy('createdAt'));
     const querySnapshot = await getDocs(q);
 
+    console.log(querySnapshot);
+
     querySnapshot.forEach(doc => {
-      console.log(doc.id, ' => ', doc.data());
+      setDataList((prev: any) => [...prev, { ...doc.data(), id: doc.id }]);
+      // console.log(doc.id, ' => ', doc.data());
     });
   };
+
+  const restTicket = dataList.filter((obj: any, idx: number) => {
+    const test = dataList.findIndex((obj2: any) => obj2.id === obj.id);
+    return test === idx;
+  }).length;
 
   useEffect(() => {
     // setMounted(true);
@@ -115,7 +123,9 @@ const Reservation = () => {
   return (
     <main className='flex min-h-screen flex-col items-center justify-center p-6'>
       {!isBooked ? (
-        <section className='p-0'>
+        <section className='flex flex-col items-center p-0'>
+          <h1 className='mb-8'>'편도' 예매하기</h1>
+          <p className='mb-8'>잔여 {60 - restTicket}석</p>
           <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-16'>
             <div className={Styles.inputBox}>
               <label htmlFor='name' className='text-sm'>

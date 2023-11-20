@@ -6,11 +6,15 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
+import { usePathname } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const vh = useVh();
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   return (
     <html lang='ko'>
@@ -26,7 +30,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
         />
       </head>
-      <body className={inter.className} style={{ height: `${100 * vh}px`, position: 'relative' }}>
+      <body
+        className={inter.className}
+        style={{
+          height: `${100 * vh}px`,
+          position: 'relative',
+          overflow: pathname === '/reservation' ? 'hidden' : 'scroll',
+        }}
+      >
         {children}
         <NavBar />
       </body>
