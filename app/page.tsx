@@ -10,6 +10,7 @@ export default function Home() {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
+    sessionStorage.setItem('isBooked', 'false');
     setMounted(true);
   }, []);
 
@@ -38,35 +39,6 @@ export default function Home() {
           <button className='bg-white' onClick={onClickToReservation}>
             예매하기
           </button>
-        </section>
-        <section className='mt-3'>
-          <div className='mt-3'>
-            <h1>셋리스트</h1>
-            <h2>쏜애플</h2>
-            <p>멸종</p>
-            <p>할시온</p>
-            <p>살</p>
-            <p>파리의왕</p>
-            <p>게와수돗물</p>
-            <p>아지랑이</p>
-            <p>은하</p>
-            <p>로마네스크</p>
-          </div>
-          <div className='mt-3'>
-            <h2>실리카겔</h2>
-            <p>머큐리얼</p>
-            <p>노페인</p>
-            <p>틱택톡</p>
-            <p>realize</p>
-          </div>
-          <div className='mt-3'>
-            <h2>파수꾼</h2>
-            <p>산호초</p>
-            <p>흩날리는 벚꽃처럼</p>
-            <p>괜찮아</p>
-            <p>문득 불안해지는 것들에 대하여</p>
-            <p>편도</p>
-          </div>
         </section>
       </main>
     )
