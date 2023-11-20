@@ -29,7 +29,10 @@ export default function Home() {
           <p>신촌 201p</p>
           <p>서울 서대문구 창천동 52-56 지하2층</p>
           <NaverMap />
-          <a className='openApp' href='nmap://search?query=%201p&appname=com.example.myapp'>
+          <a
+            className='openApp'
+            href='nmap://search?query=%201p+%ec%8b%a0%ec%b4%8c&appname=com.example.myapp'
+          >
             네이버 지도에서 열기
           </a>
           <p>티켓</p>

@@ -12,7 +12,7 @@ export type Input = {
   phone_number: string;
 };
 
-const Styles = {
+const styles = {
   inputBox: 'flex flex-col lg:w-96 md:w-80 w-64',
   input: 'p-3 rounded-lg border-solid border mt-2',
 };
@@ -144,7 +144,7 @@ const Reservation = () => {
           <h1 className='mb-4'>'편도' 예매하기</h1>
           <p className='mb-8'>잔여 {60 - restTicket}석</p>
           <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-24'>
-            <div className={Styles.inputBox}>
+            <div className={styles.inputBox}>
               <label htmlFor='name' className='text-sm'>
                 성함
               </label>
@@ -156,10 +156,10 @@ const Reservation = () => {
                 placeholder='ex) 홍길동'
                 onChange={handleData}
                 required
-                className={Styles.input}
+                className={styles.input}
               />
             </div>
-            <div className={Styles.inputBox}>
+            <div className={styles.inputBox}>
               <label htmlFor='phone_number' className='text-sm'>
                 전화번호
               </label>
@@ -171,10 +171,10 @@ const Reservation = () => {
                 placeholder='- 없이 입력하세요'
                 onChange={handleData}
                 required
-                className={Styles.input}
+                className={styles.input}
               />
             </div>
-            <div className={Styles.inputBox}>
+            <div className={styles.inputBox}>
               <label htmlFor='count' className='text-sm'>
                 예매 장수
               </label>
@@ -188,7 +188,7 @@ const Reservation = () => {
                 placeholder='ex) 3'
                 onChange={handleData}
                 required
-                className={Styles.input}
+                className={styles.input}
               />
             </div>
             <button

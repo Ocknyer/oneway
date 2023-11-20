@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <meta property='og:image:width' content='1200' /> */}
         {/* <meta property='og:image:height' content='630' /> */}
         <script
-          async
+          defer
           type='text/javascript'
           src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
         />
