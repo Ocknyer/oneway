@@ -6,7 +6,7 @@ import fireStore from '../../firebase/firestore';
 import { getDocs, addDoc, collection, query, orderBy } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 
-type Input = {
+export type Input = {
   name: string;
   count: string;
   phone_number: string;
@@ -94,10 +94,6 @@ const Reservation = () => {
     getReserveList();
   }, []);
 
-  console.log(reservedList);
-
-  console.log(restTicket);
-
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 10000);
 
@@ -106,12 +102,28 @@ const Reservation = () => {
     };
   });
 
+  const checkIsBooked = (inputs: Input) => {
+    const checkName = reservedList.filter((item: any) => item.name === inputs.name);
+    const checkPhoneNumber = reservedList.filter(
+      (item: any) => item.phone_number === inputs.phone_number,
+    );
+
+    return checkName.length > 0 || checkPhoneNumber.length > 0 ? true : false;
+  };
+
   const onClickReserve = async (e: any) => {
     e.preventDefault();
+
+    if (checkIsBooked(inputs)) {
+      alert('입력하신 정보로 예매 정보가 존재합니다.');
+      return;
+    }
+
     if (inputs.count && inputs.name && inputs.phone_number) {
       await addDoc(collection(fireStore, 'ticketholder'), { ...inputs, createdAt: time })
         .then(() => sessionStorage.setItem('isBooked', 'true'))
         .then(() => {
+          sessionStorage.setItem('inputs', JSON.stringify(inputs));
           setInputs({
             name: '',
             count: '',
@@ -125,13 +137,13 @@ const Reservation = () => {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-center p-6'>
-      {restTicket > 13 ? (
+      {restTicket > 60 ? (
         <p>전석 매진 되었습니다.</p>
-      ) : !isBooked && restTicket < 13 ? (
+      ) : !isBooked && restTicket < 60 ? (
         <section className='flex flex-col items-center p-0'>
           <h1 className='mb-4'>'편도' 예매하기</h1>
           <p className='mb-8'>잔여 {60 - restTicket}석</p>
-          <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-16'>
+          <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-24'>
             <div className={Styles.inputBox}>
               <label htmlFor='name' className='text-sm'>
                 성함
