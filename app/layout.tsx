@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
         />
       </head>
-      <body className={inter.className} style={{ height: `${100 * vh}px` }}>
+      <body className={inter.className} style={{ height: `${100 * vh}px`, position: 'relative' }}>
         {children}
         <NavBar />
       </body>
