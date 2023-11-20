@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
       <Script
         type='text/javascript'
-        // strategy='beforeInteractive'
+        strategy='beforeInteractive'
         src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
       ></Script>
     </html>
