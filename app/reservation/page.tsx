@@ -77,23 +77,26 @@ const Reservation = () => {
     const q = query(collection(fireStore, 'ticketholder'), orderBy('createdAt'));
     const querySnapshot = await getDocs(q);
 
-    console.log(querySnapshot);
-
     querySnapshot.forEach(doc => {
       setDataList((prev: any) => [...prev, { ...doc.data(), id: doc.id }]);
-      // console.log(doc.id, ' => ', doc.data());
     });
   };
 
-  const restTicket = dataList.filter((obj: any, idx: number) => {
+  const reservedList = dataList.filter((obj: any, idx: number) => {
     const test = dataList.findIndex((obj2: any) => obj2.id === obj.id);
     return test === idx;
-  }).length;
+  });
+
+  const restTicket = reservedList.reduce((acc: number, cur: any) => (acc += +cur?.count), 0);
 
   useEffect(() => {
     // setMounted(true);
     getReserveList();
   }, []);
+
+  console.log(reservedList);
+
+  console.log(restTicket);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 10000);
@@ -122,9 +125,11 @@ const Reservation = () => {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-center p-6'>
-      {!isBooked ? (
+      {restTicket > 13 ? (
+        <p>전석 매진 되었습니다.</p>
+      ) : !isBooked && restTicket < 13 ? (
         <section className='flex flex-col items-center p-0'>
-          <h1 className='mb-8'>'편도' 예매하기</h1>
+          <h1 className='mb-4'>'편도' 예매하기</h1>
           <p className='mb-8'>잔여 {60 - restTicket}석</p>
           <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-16'>
             <div className={Styles.inputBox}>
@@ -183,9 +188,9 @@ const Reservation = () => {
             </button>
           </form>
         </section>
-      ) : (
+      ) : isBooked ? (
         <CompleteSection />
-      )}
+      ) : null}
     </main>
   );
 };
