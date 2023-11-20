@@ -4,7 +4,6 @@
 
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Script from 'next/script';
 import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
 

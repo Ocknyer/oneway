@@ -11,6 +11,11 @@ type Input = {
   phone_number: string;
 };
 
+const Styles = {
+  inputBox: 'flex flex-col lg:w-96 md:w-80 w-64',
+  input: 'p-3 rounded-lg border-solid border mt-2',
+};
+
 const Reservation = () => {
   const [time, setTime] = useState(new Date());
   const [dataList, setDataList] = useState<any>([]);
@@ -108,45 +113,66 @@ const Reservation = () => {
   };
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main className='flex min-h-screen flex-col items-center justify-center p-6'>
       {!isBooked ? (
-        <form className='flex flex-col gap-2'>
-          <label htmlFor='name'>성함</label>
-          <input
-            id='name'
-            name='name'
-            value={name}
-            type='text'
-            placeholder='ex) 홍길동'
-            onChange={handleData}
-            required
-          />
-          <label htmlFor='phone_number'>전화번호</label>
-          <input
-            id='phone_number'
-            name='phone_number'
-            value={phone_number}
-            type='text'
-            placeholder='- 없이 입력하세요'
-            onChange={handleData}
-            required
-          />
-          <label htmlFor='count'>예매 장수</label>
-          <input
-            id='count'
-            name='count'
-            value={count}
-            max={3}
-            min={1}
-            type='text'
-            placeholder='ex) 3'
-            onChange={handleData}
-            required
-          />
-          <button type='submit' onClick={onClickReserve}>
-            예매하기
-          </button>
-        </form>
+        <section className='p-0'>
+          <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-16'>
+            <div className={Styles.inputBox}>
+              <label htmlFor='name' className='text-sm'>
+                성함
+              </label>
+              <input
+                id='name'
+                name='name'
+                value={name}
+                type='text'
+                placeholder='ex) 홍길동'
+                onChange={handleData}
+                required
+                className={Styles.input}
+              />
+            </div>
+            <div className={Styles.inputBox}>
+              <label htmlFor='phone_number' className='text-sm'>
+                전화번호
+              </label>
+              <input
+                id='phone_number'
+                name='phone_number'
+                value={phone_number}
+                type='text'
+                placeholder='- 없이 입력하세요'
+                onChange={handleData}
+                required
+                className={Styles.input}
+              />
+            </div>
+            <div className={Styles.inputBox}>
+              <label htmlFor='count' className='text-sm'>
+                예매 장수
+              </label>
+              <input
+                id='count'
+                name='count'
+                value={count}
+                max={3}
+                min={1}
+                type='text'
+                placeholder='ex) 3'
+                onChange={handleData}
+                required
+                className={Styles.input}
+              />
+            </div>
+            <button
+              type='submit'
+              onClick={onClickReserve}
+              className='border-solid border p-3 lg:w-56 md:w-48 w-36'
+            >
+              예매하기
+            </button>
+          </form>
+        </section>
       ) : (
         <CompleteSection />
       )}

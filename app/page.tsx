@@ -36,7 +36,10 @@ export default function Home() {
           <p>예매: 10,000₩ / 현매: 12,000₩</p>
           <p>수용인원</p>
           <p>60명 / 전석 스탠딩</p>
-          <button className='bg-white' onClick={onClickToReservation}>
+          <button
+            onClick={onClickToReservation}
+            className='border-solid border p-3 lg:w-56 md:w-48 w-36'
+          >
             예매하기
           </button>
         </section>

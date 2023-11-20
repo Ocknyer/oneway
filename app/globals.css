@@ -146,6 +146,7 @@ section {
 body {
   line-height: 1;
   color: black;
+  overflow: hidden;
 }
 ol,
 ul {
