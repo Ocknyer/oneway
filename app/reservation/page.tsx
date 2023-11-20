@@ -65,7 +65,8 @@ const Reservation = () => {
           .replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
       });
     }
-  }, [inputs, inputs.phone_number]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputs.phone_number]);
 
   const getReserveList = async () => {
     const q = query(collection(fireStore, 'ticketholder'), orderBy('createdAt'));

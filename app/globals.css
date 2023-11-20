@@ -187,3 +187,7 @@ h3 {
   font-family: 'GmarketSansMedium';
   font-weight: 700;
 }
+
+html {
+  background-color: #fff;
+}
