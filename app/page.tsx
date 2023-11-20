@@ -31,7 +31,8 @@ export default function Home() {
           <NaverMap />
           <a
             className='openApp'
-            href='nmap://search?query=%201p+%ec%8b%a0%ec%b4%8c&appname=com.example.myapp'
+            // href='nmap://search?query=%201p+%ec%8b%a0%ec%b4%8c&appname=com.example.myapp'
+            href='nmap://place?id=1207333493&appname=com.example.oneway'
           >
             네이버 지도에서 열기
           </a>
