@@ -21,7 +21,7 @@ export default function Home() {
   return (
     mounted && (
       <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-        <section>
+        <section className='flex flex-col items-center gap-2'>
           <h1>밴드파수꾼 단독공연 '편도'</h1>
           <p>일시</p>
           <p>2023.12.30.토요일 19:00 ~ 21:00</p>
