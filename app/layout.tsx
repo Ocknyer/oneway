@@ -21,6 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <meta property='og:image' content='/public/imgs/og_image.png' /> */}
         {/* <meta property='og:image:width' content='1200' /> */}
         {/* <meta property='og:image:height' content='630' /> */}
+        <script
+          async
+          type='text/javascript'
+          src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
+        />
       </head>
       <body className={inter.className} style={{ height: `${100 * vh}px` }}>
         {children}
@@ -28,15 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
       {/* <Script
         type='text/javascript'
-        strategy='beforeInteractive'
+        strategy='lazyOnload'
         src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
       ></Script> */}
-      <script
-        async
-        type='text/javascript'
-        // strategy='beforeInteractive'
-        src='https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=aejuu1jw3l'
-      />
     </html>
   );
 }
