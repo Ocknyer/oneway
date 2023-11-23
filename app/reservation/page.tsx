@@ -103,12 +103,12 @@ const Reservation = () => {
   });
 
   const checkIsBooked = (inputs: Input) => {
-    const checkName = reservedList.filter((item: any) => item.name === inputs.name);
+    // const checkName = reservedList.filter((item: any) => item.name === inputs.name);
     const checkPhoneNumber = reservedList.filter(
       (item: any) => item.phone_number === inputs.phone_number,
     );
 
-    return checkName.length > 0 || checkPhoneNumber.length > 0 ? true : false;
+    return checkPhoneNumber.length > 0 ? true : false;
   };
 
   const onClickReserve = async (e: any) => {
