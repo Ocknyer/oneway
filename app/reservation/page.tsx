@@ -149,7 +149,7 @@ const Reservation = () => {
         <section className='flex flex-col items-center p-0'>
           {/* <h1 className='mb-4'>'편도' 예매하기</h1> */}
           <p className='mb-4 text-lg'>잔여 {60 - restTicket}석</p>
-          <form className='submit-form flex flex-col text-center items-center lg:gap-8 md:gap-6 gap-4 mb-16 rounded-2xl p-8 lg:w-full md:w-96 w-72'>
+          <form className='submit-form flex flex-col text-center items-center lg:gap-8 md:gap-6 gap-4 mb-16 rounded-2xl p-8 lg:w-full md:w-96 xs:w-60 w-72'>
             <div className={styles.inputBox}>
               <label htmlFor='name' className='text-base'>
                 성함
