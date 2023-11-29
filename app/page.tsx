@@ -59,6 +59,13 @@ export default function Home() {
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
+          <div className='flex flex-col absolute top-60 gap-2 text-xs text-center'>
+            <p>시간이 무척 빠른 것 같은 오늘입니다.</p>
+            <p>여러분의 한 해가 너무 힘들지 않으셨길,</p>
+            <p>다가오는 내년은 보다 편안하시길</p>
+            <p>그렇게 행복하시길 바라겠습니다.</p>
+            <p className='mt-2'>- 파수꾼 드림 -</p>
+          </div>
           <div className={`${scroll1} flex-col items-center gap-2 absolute bottom-44 opacity-40`}>
             <p className='text-sm'>아래로 스크롤</p>
             <svg
@@ -77,6 +84,7 @@ export default function Home() {
             </svg>
           </div>
         </section>
+
         <section className='flex flex-col items-center gap-y-3 relative' style={{ height: `${100 * vh}px` }}>
           {/* <section className='h-full flex flex-col items-center gap-y-3 mb-96 relative'> */}
           <p className='text-xl font-bold'>티켓</p>
@@ -115,6 +123,7 @@ export default function Home() {
             </svg>
           </div>
         </section>
+
         <section
           className='flex flex-col items-center justify-center gap-y-3 text-center'
           style={{ height: `${100 * vh}px` }}
