@@ -33,7 +33,7 @@ export default function Home() {
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
           <div className='flex flex-col items-center gap-2 absolute bottom-44'>
-            <p className='text-sm'>scroll</p>
+            <p className='text-sm'>아래로 스크롤</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -64,9 +64,13 @@ export default function Home() {
             예매하기
           </button>
         </section>
-        <section className='h-full flex flex-col items-center gap-y-3 mb-48'>
+        <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'>
           <p className='text-xl font-bold'>일시</p>
-          <p className='text-lg mb-5'>2023.12.30.토요일 18:30 - 20:30</p>
+          <p className='text-lg mb-6'>
+            2023.12.30.토요일
+            <br />
+            18:30 - 20:30
+          </p>
           <p className='text-xl font-bold'>장소</p>
           <p className='text-lg'>신촌 201P</p>
           <NaverMap />
