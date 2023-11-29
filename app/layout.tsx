@@ -7,12 +7,11 @@ import './globals.css';
 import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const vh = useVh();
   const pathname = usePathname();
-
-  console.log(pathname);
 
   return (
     <html lang='ko'>

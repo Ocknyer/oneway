@@ -119,7 +119,9 @@ const Reservation = () => {
     e.preventDefault();
 
     if (checkIsBooked(inputs)) {
-      alert('입력하신 정보로 예매 정보가 존재합니다.');
+      alert(
+        '입력하신 휴대전화번호로 예매 정보가 존재합니다.\n\n추가 예매를 원하시면 010-3364-0633(파수꾼 김대운)으로 문의 주시기 바랍니다.',
+      );
       return;
     }
 

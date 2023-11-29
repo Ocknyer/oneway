@@ -38,9 +38,9 @@ export default function Home() {
             예매하기
           </button>
         </section>
-        <section className='h-full flex flex-col items-center gap-y-3 mb-52'>
+        <section className='h-full flex flex-col items-center gap-y-3 mb-40'>
           <p className='text-xl font-bold'>일시</p>
-          <p className='text-lg'>2023.12.30.토요일 19:00 ~ 21:00</p>
+          <p className='text-lg mb-5'>2023.12.30.토요일 19:00 ~ 21:00</p>
           <p className='text-xl font-bold'>장소</p>
           <p className='text-lg'>신촌 201P</p>
           <NaverMap />
