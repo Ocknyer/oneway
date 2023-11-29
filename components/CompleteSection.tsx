@@ -6,8 +6,10 @@ const CompleteSection = () => {
   const inputs = json && JSON.parse(json);
   console.log(inputs);
 
+  // 예매완료 페이지 총금액
   const totalPrice = (+inputs?.count * 10000).toLocaleString();
 
+  // 계좌번호 복사
   const onClickCopyToClipboard = async (text: string) => {
     try {
       if (navigator.clipboard) {
@@ -35,12 +37,11 @@ const CompleteSection = () => {
         <span className='text-orange-400 font-bold'>똑같이</span> 입력해주시기 바랍니다.
       </p>
       <p className='leading-7 mt-2 font-bold bg-black/60 px-2'>
-        하나은행{' '}
         <button
           onClick={() => onClickCopyToClipboard('31201168414007')}
           className='underline decoration-solid'
         >
-          312-0116-8414-007
+          하나은행 312-0116-8414-007
         </button>
         <br />
         예금주: 김대운

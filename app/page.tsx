@@ -50,21 +50,50 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        <section className='h-full flex flex-col items-center gap-y-3 mb-96'>
+        <section
+          className='flex flex-col items-center gap-y-3 relative'
+          style={{ height: `${100 * vh}px` }}
+        >
+          {/* <section
+          className='h-full flex flex-col items-center gap-y-3 mb-96 relative'
+        > */}
           <p className='text-xl font-bold'>티켓</p>
           <p className='text-lg'>예매: 10,000₩ / 현매: 12,000₩</p>
           <p className='text-xs'>&#8251; 조기 매진 시 현매는 불가능합니다.</p>
           <p className='text-xs mb-5'>&#8251; 1인 3매까지 구매하실 수 있습니다.</p>
           <p className='text-xl font-bold'>수용인원</p>
           <p className='text-lg mb-3'>60명 / 전석 스탠딩</p>
+          <p className='text-xl'>문의</p>
+          <p className='text-lg mb-3'>010-3364-0633 김대운</p>
           <button
             onClick={onClickToReservation}
             className='border-solid border p-3 lg:w-56 md:w-48 w-36'
           >
             예매하기
           </button>
+          <div className='flex flex-col items-center gap-2 absolute bottom-44'>
+            <p className='text-sm'>일시/장소</p>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5'
+              />
+            </svg>
+          </div>
         </section>
-        <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'>
+        <section
+          className='flex flex-col items-center justify-center gap-y-3 text-center'
+          style={{ height: `${100 * vh}px` }}
+        >
+          {/* <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'> */}
           <p className='text-xl font-bold'>일시</p>
           <p className='text-lg mb-6'>
             2023.12.30.토요일
