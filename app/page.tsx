@@ -27,7 +27,7 @@ export default function Home() {
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
-          <div className='flex flex-col items-center gap-2 absolute bottom-32'>
+          <div className='flex flex-col items-center gap-2 absolute bottom-44'>
             <p className='text-sm'>scroll</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
