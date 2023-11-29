@@ -26,7 +26,8 @@ const NaverMap = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={mapElement} id='map' style={{ width: '300px', height: '200px' }}></div>;
+  // style={{ width: '300px', height: '200px' }}
+  return <div className='w-72 h-52 rounded-lg opacity-90' ref={mapElement} id='map'></div>;
 };
 
 export default NaverMap;

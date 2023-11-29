@@ -8,36 +8,33 @@ const SetList = () => {
   //   }, []);
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <section className='mt-3'>
-        <div className='mt-3'>
-          <h1>셋리스트</h1>
-          <h2>쏜애플</h2>
-          <p>청색증</p>
-          <p>로마네스크</p>
-          <p>아가미</p>
-          <p>할시온</p>
-          <p>파리의왕</p>
-          <p>게와수돗물</p>
-          <p>살</p>
-          <p>아지랑이</p>
-          <p>은하</p>
-          <p>멸종</p>
-        </div>
-        <div className='mt-3'>
-          <h2>실리카겔</h2>
-          <p>Realize</p>
-          <p>Tik Tak Tok</p>
-          <p>No Pain</p>
-        </div>
-        <div className='mt-3'>
-          <h2>파수꾼</h2>
-          <p>산호초</p>
-          <p>흩날리는 벚꽃처럼</p>
-          <p>부화</p>
-          <p>편도</p>
-        </div>
-      </section>
+    <main className='flex min-h-screen flex-col items-center p-6 relative'>
+      <div className='absolute top-20'>
+        <section className='text-center'>
+          <h1 className='text-xl mb-2'>1부</h1>
+          <p className='text-base'>쏜애플 - 청색증</p>
+          <p className='text-base'>쏜애플 - 로마네스크</p>
+          <p className='text-base'>파수꾼 - 산호초</p>
+          <p className='text-base'>(coming soon)</p>
+          <p className='text-base'>쏜애플 - 아가미</p>
+          <p className='text-base'>쏜애플 - 할시온</p>
+          <p className='text-base'>쏜애플 - 살</p>
+          <p className='text-base'>쏜애플 - 아지랑이</p>
+          <p className='text-base'>쏜애플 - 은하</p>
+        </section>
+
+        <section className='mt-8 text-center'>
+          <h2 className='text-xl mb-2'>2부</h2>
+          <p className='text-base'>(coming soon)</p>
+          <p className='text-base'>쏜애플 - 파리의왕</p>
+          <p className='text-base'>쏜애플 - 게와수돗물</p>
+          <p className='text-base'>실리카겔 - Realize</p>
+          <p className='text-base'>실리카겔 - Tik Tak Tok</p>
+          <p className='text-base'>실리카겔 - No Pain</p>
+          <p className='text-base'>쏜애플 - 멸종</p>
+          <p className='text-base'>파수꾼 - 편도</p>
+        </section>
+      </div>
     </main>
   );
 };
