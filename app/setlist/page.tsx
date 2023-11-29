@@ -17,10 +17,10 @@ const SetList = () => {
             <p>쏜애플 - 로마네스크</p>
             <p>파수꾼 - 산호초</p>
             <p>(coming soon)</p>
-            <p>쏜애플 - 아가미</p>
             <p>쏜애플 - 할시온</p>
-            <p>쏜애플 - 살</p>
+            <p>쏜애플 - 아가미</p>
             <p>쏜애플 - 아지랑이</p>
+            <p>쏜애플 - 살</p>
             <p>쏜애플 - 은하</p>
           </div>
         </section>
@@ -29,8 +29,8 @@ const SetList = () => {
           <h2 className='text-2xl font-bold mb-4'>2부</h2>
           <div className='flex flex-col gap-5'>
             <p>(coming soon)</p>
-            <p>쏜애플 - 파리의왕</p>
-            <p>쏜애플 - 게와수돗물</p>
+            <p>쏜애플 - 파리의 왕</p>
+            <p>쏜애플 - 게와 수돗물</p>
             <p>실리카겔 - Realize</p>
             <p>실리카겔 - Tik Tak Tok</p>
             <p>실리카겔 - No Pain</p>
