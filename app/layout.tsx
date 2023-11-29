@@ -8,8 +8,6 @@ import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
 import { usePathname } from 'next/navigation';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const vh = useVh();
   const pathname = usePathname();
@@ -35,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{
           height: `${100 * vh}px`,
           position: 'relative',
-          overflow: pathname === '/' ? 'scroll' : 'hidden',
+          overflow: pathname === '/reservation' ? 'hidden' : 'scroll',
         }}
       >
         {children}
