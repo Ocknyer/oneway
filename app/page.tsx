@@ -2,12 +2,14 @@
 'use client';
 
 import NaverMap from '@/components/NaverMap';
+import { useVh } from '@/hooks/useVh';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
   const router = useRouter();
   const [mounted, setMounted] = useState<boolean>(false);
+  const vh = useVh();
 
   useEffect(() => {
     setMounted(true);
@@ -21,7 +23,10 @@ export default function Home() {
   return (
     mounted && (
       <main className='flex min-h-screen flex-col items-center justify-center p-10'>
-        <section className='w-full flex flex-col items-center h-screen text-white relative'>
+        <section
+          className='w-full flex flex-col items-center text-white relative'
+          style={{ height: `${100 * vh}px` }}
+        >
           <div className='flex flex-col gap-y-3 items-center absolute top-28 w-full'>
             <h2 className='text-xl drop-shadow-2xl'>밴드 파수꾼 연말공연</h2>
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
