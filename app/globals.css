@@ -22,8 +22,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+  /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+    rgb(var(--background-start-rgb)); */
 }
 
 /* body {
@@ -135,17 +135,19 @@ video {
 }
 
 @font-face {
-  font-family: 'PyeongChang-Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2')
-    format('woff2');
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
 @font-face {
-  font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-    format('woff');
+  font-family: 'HSBombaram21-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -164,10 +166,6 @@ nav,
 section {
   display: block;
   box-sizing: border-box;
-}
-body {
-  line-height: 1;
-  /* color: black; */
 }
 ol,
 ul {
@@ -197,7 +195,7 @@ table {
 
 p,
 a {
-  font-family: 'PyeongChang-Bold';
+  font-family: 'Nanum Myeongjo';
   font-weight: normal;
   text-decoration: none;
 }
@@ -206,10 +204,77 @@ header,
 h1,
 h2,
 h3 {
-  font-family: 'GmarketSansMedium';
+  font-family: 'Nanum Myeongjo';
   font-weight: 700;
 }
 
 html {
-  background-color: #fff;
+  font-family: 'Nanum Myeongjo';
+  font-size: 16px;
+  -webkit-text-size-adjust: none;
+
+  @media screen and (min-device-width: 320px) {
+    html {
+      font-size: 62.5%;
+    }
+  }
+}
+
+body {
+  font-family: 'Nanum Myeongjo', serif;
+  color: white;
+}
+
+.bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../public/image/bg_airplane.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: scroll;
+  z-index: -1;
+}
+
+.navbar {
+  box-shadow: 0px -5px 5px -2px rgba(0, 0, 0, 0.5);
+}
+
+.submit-form {
+  backdrop-filter: blur(10px);
+  background-color: rgba(221, 221, 221, 0.1);
+  box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+}
+
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 106.3%;
+  }
+}
+
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  html {
+    font-size: 106.3%;
+  }
+}
+
+/* 모바일 세로 (해상도 ~ 479px)*/
+@media all and (max-width: 479px) {
+  html {
+    font-size: 100%;
+  }
 }

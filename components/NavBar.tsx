@@ -22,7 +22,7 @@ const NavBar = () => {
     }
   };
   return (
-    <nav className='flex w-full h-16 p-4 fixed bottom-0 justify-between bg-transparent border-t border-solid border-black'>
+    <nav className='navbar flex w-full h-15 p-4 fixed bottom-0 justify-between bg-black/30 text-base'>
       {buttonData.map(button => {
         return (
           <button key={button.id} name={button.name} className='w-full' onClick={onClickEachButton}>

@@ -13,8 +13,8 @@ export type Input = {
 };
 
 const styles = {
-  inputBox: 'flex flex-col lg:w-96 md:w-80 w-64',
-  input: 'p-3 rounded-lg border-solid border mt-2',
+  inputBox: 'flex flex-col lg:w-96 md:w-80 w-full mt-2',
+  input: 'p-3 border-solid border mt-2',
 };
 
 const Reservation = () => {
@@ -141,11 +141,11 @@ const Reservation = () => {
         <p>전석 매진 되었습니다.</p>
       ) : !isBooked && restTicket < 60 ? (
         <section className='flex flex-col items-center p-0'>
-          <h1 className='mb-4'>'편도' 예매하기</h1>
+          {/* <h1 className='mb-4'>'편도' 예매하기</h1> */}
           <p className='mb-8'>잔여 {60 - restTicket}석</p>
-          <form className='flex flex-col items-center lg:gap-8 md:gap-6 gap-4 mb-24'>
+          <form className='submit-form flex flex-col text-center items-center lg:gap-8 md:gap-6 gap-4 mb-16 rounded-2xl p-8 lg:w-full md:w-96 w-80'>
             <div className={styles.inputBox}>
-              <label htmlFor='name' className='text-sm'>
+              <label htmlFor='name' className='text-base'>
                 성함
               </label>
               <input
@@ -160,7 +160,7 @@ const Reservation = () => {
               />
             </div>
             <div className={styles.inputBox}>
-              <label htmlFor='phone_number' className='text-sm'>
+              <label htmlFor='phone_number' className='text-base'>
                 전화번호
               </label>
               <input
@@ -175,7 +175,7 @@ const Reservation = () => {
               />
             </div>
             <div className={styles.inputBox}>
-              <label htmlFor='count' className='text-sm'>
+              <label htmlFor='count' className='text-base'>
                 예매 장수
               </label>
               <input
@@ -194,9 +194,9 @@ const Reservation = () => {
             <button
               type='submit'
               onClick={onClickReserve}
-              className='border-solid border p-3 lg:w-56 md:w-48 w-36'
+              className='border-solid border p-3 w-full mt-4 bg-black/40'
             >
-              예매하기
+              제출하기
             </button>
           </form>
         </section>
