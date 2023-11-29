@@ -27,7 +27,7 @@ export default function Home() {
           className='w-full flex flex-col items-center text-white relative'
           style={{ height: `${100 * vh}px` }}
         >
-          <div className='flex flex-col gap-y-3 items-center absolute top-28 w-full'>
+          <div className='flex flex-col gap-y-3 items-center absolute top-20 w-full'>
             <h2 className='text-xl drop-shadow-2xl'>밴드 파수꾼 연말공연</h2>
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>

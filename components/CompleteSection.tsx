@@ -23,7 +23,11 @@ const CompleteSection = () => {
         <br />
         똑같이 입력해주시기 바랍니다.
       </p>
-      <p className='leading-7 mt-2 font-bold'>하나은행 312-0116-8414-007 예금주: 김대운</p>
+      <p className='leading-7 mt-2 font-bold'>
+        하나은행 312-0116-8414-007
+        <br />
+        예금주: 김대운
+      </p>
     </section>
   );
 };
