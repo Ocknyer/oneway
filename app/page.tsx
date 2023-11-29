@@ -11,9 +11,37 @@ export default function Home() {
   const [mounted, setMounted] = useState<boolean>(false);
   const vh = useVh();
 
+  const [scroll1, setScroll1] = useState('flex');
+  const [scroll2, setScroll2] = useState('flex');
+
   useEffect(() => {
     setMounted(true);
     sessionStorage.setItem('isBooked', 'false');
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 150) {
+      setScroll1('flex scroll-bottom');
+    } else if (window.scrollY < 150) {
+      setScroll1('flex');
+    }
+  };
+
+  const handleScroll2 = () => {
+    if (window.scrollY >= 1000) {
+      setScroll2('flex scroll-bottom');
+    } else if (window.scrollY < 1000) {
+      setScroll2('flex');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll2);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll2);
+    };
   }, []);
 
   const onClickToReservation = () => {
@@ -32,7 +60,7 @@ export default function Home() {
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
-          <div className='flex flex-col items-center gap-2 absolute bottom-44 opacity-30'>
+          <div className={`${scroll1} flex-col items-center gap-2 absolute bottom-44 opacity-30`}>
             <p className='text-sm'>아래로 스크롤</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -71,7 +99,7 @@ export default function Home() {
           >
             예매하기
           </button>
-          <div className='flex flex-col items-center gap-2 absolute bottom-44 opacity-30'>
+          <div className={`${scroll2} flex-col items-center gap-2 mt-8 opacity-30`}>
             <p className='text-sm'>일시/장소</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -106,7 +134,6 @@ export default function Home() {
           <p className='text-sm'>서울 서대문구 창천동 52-56 지하2층</p>
           <a
             className='openApp text-sm border-solid border py-1 px-2'
-            // href='nmap://search?query=%201p+%ec%8b%a0%ec%b4%8c&appname=com.example.myapp'
             href='nmap://place?id=1207333493&appname=com.example.oneway'
           >
             네이버 지도에서 열기

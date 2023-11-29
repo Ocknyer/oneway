@@ -4,7 +4,6 @@ import React from 'react';
 const CompleteSection = () => {
   const json = typeof window !== 'undefined' ? sessionStorage.getItem('inputs') : null;
   const inputs = json && JSON.parse(json);
-  console.log(inputs);
 
   // 예매완료 페이지 총금액
   const totalPrice = (+inputs?.count * 10000).toLocaleString();
