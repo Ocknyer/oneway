@@ -13,8 +13,8 @@ export type Input = {
 };
 
 const styles = {
-  inputBox: 'flex flex-col lg:w-96 md:w-80 w-full mt-2',
-  input: 'p-3 border-solid border mt-2',
+  inputBox: 'flex flex-col lg:w-96 md:w-80 w-full mt-1',
+  input: 'p-3 border-solid border mt-2 text-black',
 };
 
 const Reservation = () => {
@@ -25,11 +25,15 @@ const Reservation = () => {
   const json = typeof window !== 'undefined' ? sessionStorage.getItem('isBooked') : null;
   const isBooked = json && JSON.parse(json);
 
+  const [isAgree, setIsAgree] = useState(false);
   const [inputs, setInputs] = useState<Input>({
     name: '',
     count: '',
     phone_number: '',
   });
+
+  const isFilled =
+    inputs.name !== '' && inputs.count !== '' && inputs.phone_number.length >= 10 && isAgree;
 
   const { name, count, phone_number } = inputs;
 
@@ -115,7 +119,9 @@ const Reservation = () => {
     e.preventDefault();
 
     if (checkIsBooked(inputs)) {
-      alert('입력하신 정보로 예매 정보가 존재합니다.');
+      alert(
+        '입력하신 휴대전화번호로 예매 정보가 존재합니다.\n\n추가 예매를 원하시면 010-3364-0633(파수꾼 김대운)으로 문의 주시기 바랍니다.',
+      );
       return;
     }
 
@@ -142,8 +148,8 @@ const Reservation = () => {
       ) : !isBooked && restTicket < 60 ? (
         <section className='flex flex-col items-center p-0'>
           {/* <h1 className='mb-4'>'편도' 예매하기</h1> */}
-          <p className='mb-8'>잔여 {60 - restTicket}석</p>
-          <form className='submit-form flex flex-col text-center items-center lg:gap-8 md:gap-6 gap-4 mb-16 rounded-2xl p-8 lg:w-full md:w-96 w-80'>
+          <p className='mb-4 text-lg'>잔여 {60 - restTicket}석</p>
+          <form className='submit-form flex flex-col text-center items-center lg:gap-8 md:gap-6 gap-4 mb-16 rounded-2xl p-8 lg:w-full md:w-96 w-72'>
             <div className={styles.inputBox}>
               <label htmlFor='name' className='text-base'>
                 성함
@@ -191,10 +197,23 @@ const Reservation = () => {
                 className={styles.input}
               />
             </div>
+
+            <div className='flex gap-2'>
+              <input
+                id='agree'
+                type='checkbox'
+                className='border-none'
+                onChange={() => setIsAgree(prev => !prev)}
+              />
+              <label htmlFor='agree' className='text-xs'>
+                개인정보제공에 동의합니다.
+              </label>
+            </div>
             <button
+              disabled={isFilled ? false : true}
               type='submit'
               onClick={onClickReserve}
-              className='border-solid border p-3 w-full mt-4 bg-black/40'
+              className='border-solid border p-3 w-4/5 mt-2 bg-black/40'
             >
               제출하기
             </button>
