@@ -54,7 +54,12 @@ const Reservation = () => {
     }
 
     if (name === 'count') {
-      const regex = /^[1-3]{0,1}$/;
+      const regex =
+        60 - restTicket >= 3
+          ? /^[1-3]{0,1}$/
+          : 60 - restTicket === 2
+          ? /^[1-2]{0,1}$/
+          : /^[1]{0,1}$/;
       if (regex.test(e.target.value)) {
         setInputs({ ...inputs, count: e.target.value });
       }
@@ -124,6 +129,7 @@ const Reservation = () => {
       alert(
         '입력하신 휴대전화번호로 예매 정보가 존재합니다.\n\n추가 예매를 원하시면 010-3364-0633(파수꾼 김대운)으로 문의 주시기 바랍니다.',
       );
+      setInputs({ ...inputs, phone_number: '' });
       return;
     }
 
@@ -143,12 +149,14 @@ const Reservation = () => {
     }
   };
 
+  console.log(restTicket);
+
   return (
     <main
       className='flex flex-col items-center justify-center p-6'
       style={{ height: `${100 * vh}px` }}
     >
-      {restTicket > 60 ? (
+      {restTicket >= 60 ? (
         <p>전석 매진 되었습니다.</p>
       ) : !isBooked && restTicket < 60 ? (
         <section className='flex flex-col items-center p-0'>
@@ -164,7 +172,7 @@ const Reservation = () => {
                 name='name'
                 value={name}
                 type='text'
-                placeholder='ex) 홍길동'
+                placeholder='ex) 김편도'
                 onChange={handleData}
                 required
                 className={styles.input}
@@ -179,7 +187,7 @@ const Reservation = () => {
                 name='phone_number'
                 value={phone_number}
                 type='text'
-                placeholder='- 없이 입력하세요'
+                placeholder='- 없이 입력해주세요.'
                 onChange={handleData}
                 required
                 className={styles.input}
@@ -196,7 +204,7 @@ const Reservation = () => {
                 max={3}
                 min={1}
                 type='text'
-                placeholder='ex) 3'
+                placeholder={`ex) 1 / 최대 ${60 - restTicket >= 3 ? 3 : 60 - restTicket}매`}
                 onChange={handleData}
                 required
                 className={styles.input}
