@@ -2,6 +2,7 @@
 'use client';
 
 import NaverMap from '@/components/NaverMap';
+import useCopyClipboard from '@/hooks/useCopyClipboard';
 import { useVh } from '@/hooks/useVh';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,7 @@ export default function Home() {
   const router = useRouter();
   const [mounted, setMounted] = useState<boolean>(false);
   const vh = useVh();
+  const { copyToClipboard } = useCopyClipboard();
 
   const [scroll1, setScroll1] = useState('flex');
   const [scroll2, setScroll2] = useState('flex');
@@ -28,9 +30,9 @@ export default function Home() {
   };
 
   const handleScroll2 = () => {
-    if (window.scrollY >= 900) {
+    if (window.scrollY >= 1000) {
       setScroll2('flex scroll-bottom');
-    } else if (window.scrollY < 900) {
+    } else if (window.scrollY < 1000) {
       setScroll2('flex');
     }
   };
@@ -51,10 +53,7 @@ export default function Home() {
   return (
     mounted && (
       <main className='flex min-h-screen flex-col items-center justify-center p-10'>
-        <section
-          className='w-full flex flex-col items-center text-white relative'
-          style={{ height: `${100 * vh}px` }}
-        >
+        <section className='w-full flex flex-col items-center text-white relative' style={{ height: `${100 * vh}px` }}>
           <div className='flex flex-col gap-y-3 items-center absolute top-20 w-full'>
             <h2 className='text-xl drop-shadow-2xl'>밴드 파수꾼 연말공연</h2>
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
@@ -78,23 +77,24 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        <section
-          className='flex flex-col items-center gap-y-3 relative'
-          style={{ height: `${100 * vh}px` }}
-        >
+        <section className='flex flex-col items-center gap-y-3 relative' style={{ height: `${100 * vh}px` }}>
           {/* <section className='h-full flex flex-col items-center gap-y-3 mb-96 relative'> */}
           <p className='text-xl font-bold'>티켓</p>
           <p className='text-lg'>예매: 10,000₩ / 현매: 12,000₩</p>
+          <p className='text-xs'>
+            &#8251; 하나은행{' '}
+            <button className='underline' onClick={() => copyToClipboard('하나은행 31201168414007')}>
+              312-0116-8414-007
+            </button>{' '}
+            김대운
+          </p>
           <p className='text-xs'>&#8251; 조기 매진 시 현매는 불가능합니다.</p>
           <p className='text-xs mb-5'>&#8251; 1인 3매까지 구매하실 수 있습니다.</p>
           <p className='text-xl font-bold'>수용인원</p>
           <p className='text-lg mb-3'>60명 / 전석 스탠딩</p>
           <p className='text-xl'>문의</p>
           <p className='text-lg mb-3'>010-3364-0633 김대운</p>
-          <button
-            onClick={onClickToReservation}
-            className='border-solid border p-3 lg:w-56 md:w-48 w-36'
-          >
+          <button onClick={onClickToReservation} className='border-solid border p-3 lg:w-56 md:w-48 w-36'>
             예매하기
           </button>
           <div className={`${scroll2} flex-col items-center gap-2 mt-8 opacity-40`}>

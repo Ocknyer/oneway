@@ -1,12 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
 const SetList = () => {
-  //   const [mounted, setMounted] = useState<boolean>(false);
-
-  //   useEffect(() => {
-  //     setMounted(true);
-  //   }, []);
-
   return (
     <main className='flex h-full flex-col items-center p-6 relative'>
       <div className='absolute top-10 pb-32'>
