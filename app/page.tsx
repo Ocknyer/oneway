@@ -21,24 +21,26 @@ export default function Home() {
   return (
     mounted && (
       <main className='flex min-h-screen flex-col items-center justify-center p-10'>
-        <section className='flex flex-col items-center gap-y-3 h-screen text-white mt-52'>
-          <h2 className='text-xl drop-shadow-2xl'>밴드 파수꾼 연말공연</h2>
-          <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
-          <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
+        <section className='w-full flex flex-col items-center h-screen text-white relative'>
+          <div className='flex flex-col gap-y-3 items-center absolute top-28 w-full'>
+            <h2 className='text-xl drop-shadow-2xl'>밴드 파수꾼 연말공연</h2>
+            <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
+            <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
+          </div>
           <div className='flex flex-col items-center gap-2 absolute bottom-32'>
             <p className='text-sm'>scroll</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
-              stroke-width='1.5'
+              strokeWidth={1.5}
               stroke='currentColor'
               className='w-6 h-6'
             >
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                d='M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5'
               />
             </svg>
           </div>

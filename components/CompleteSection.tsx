@@ -18,6 +18,11 @@ const CompleteSection = () => {
         <br />
         입금 확인 후 예매 확정 문자가 발송됩니다.
       </p>
+      <p className='leading-7 mt-2'>
+        입금자 성함은 예매자 성함과
+        <br />
+        똑같이 입력해주시기 바랍니다.
+      </p>
       <p className='leading-7 mt-2 font-bold'>하나은행 312-0116-8414-007 예금주: 김대운</p>
     </section>
   );
