@@ -5,6 +5,7 @@ import CompleteSection from '@/components/CompleteSection';
 import fireStore from '../../firebase/firestore';
 import { getDocs, addDoc, collection, query, orderBy } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
+import { useVh } from '@/hooks/useVh';
 
 export type Input = {
   name: string;
@@ -18,6 +19,7 @@ const styles = {
 };
 
 const Reservation = () => {
+  const vh = useVh();
   const [time, setTime] = useState(new Date());
   const [dataList, setDataList] = useState<any>([]);
   // const [mounted, setMounted] = useState<boolean>(false);
@@ -142,7 +144,10 @@ const Reservation = () => {
   };
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-center p-6'>
+    <main
+      className='flex flex-col items-center justify-center p-6'
+      style={{ height: `${100 * vh}px` }}
+    >
       {restTicket > 60 ? (
         <p>전석 매진 되었습니다.</p>
       ) : !isBooked && restTicket < 60 ? (
