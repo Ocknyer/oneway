@@ -78,11 +78,11 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        {/* <section
+        <section
           className='flex flex-col items-center gap-y-3 relative'
           style={{ height: `${100 * vh}px` }}
-        > */}
-        <section className='h-full flex flex-col items-center gap-y-3 mb-96 relative'>
+        >
+          {/* <section className='h-full flex flex-col items-center gap-y-3 mb-96 relative'> */}
           <p className='text-xl font-bold'>티켓</p>
           <p className='text-lg'>예매: 10,000₩ / 현매: 12,000₩</p>
           <p className='text-xs'>&#8251; 조기 매진 시 현매는 불가능합니다.</p>
@@ -115,11 +115,11 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        {/* <section
+        <section
           className='flex flex-col items-center justify-center gap-y-3 text-center'
           style={{ height: `${100 * vh}px` }}
-        > */}
-        <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'>
+        >
+          {/* <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'> */}
           <p className='text-xl font-bold'>일시</p>
           <p className='text-lg mb-6'>
             2023.12.30.토요일
