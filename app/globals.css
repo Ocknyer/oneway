@@ -288,3 +288,16 @@ button:disabled {
     font-size: 100%;
   }
 }
+
+.scroll-bottom {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}

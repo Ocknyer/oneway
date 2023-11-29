@@ -4,10 +4,11 @@ import React from 'react';
 const CompleteSection = () => {
   const json = typeof window !== 'undefined' ? sessionStorage.getItem('inputs') : null;
   const inputs = json && JSON.parse(json);
-  console.log(inputs);
 
+  // 예매완료 페이지 총금액
   const totalPrice = (+inputs?.count * 10000).toLocaleString();
 
+  // 계좌번호 복사
   const onClickCopyToClipboard = async (text: string) => {
     try {
       if (navigator.clipboard) {
@@ -37,7 +38,7 @@ const CompleteSection = () => {
       <p className='leading-7 mt-2 font-bold bg-black/60 px-2'>
         하나은행{' '}
         <button
-          onClick={() => onClickCopyToClipboard('31201168414007')}
+          onClick={() => onClickCopyToClipboard('하나은행 31201168414007')}
           className='underline decoration-solid'
         >
           312-0116-8414-007
