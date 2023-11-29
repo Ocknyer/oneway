@@ -13,8 +13,8 @@ export type Input = {
 };
 
 const styles = {
-  inputBox: 'flex flex-col lg:w-96 md:w-80 w-full mt-1',
-  input: 'p-3 border-solid border mt-2 text-black',
+  inputBox: 'flex flex-col lg:w-96 md:w-80 w-full',
+  input: 'p-2 border-solid border mt-2 text-black text-sm',
 };
 
 const Reservation = () => {
@@ -213,7 +213,7 @@ const Reservation = () => {
               disabled={isFilled ? false : true}
               type='submit'
               onClick={onClickReserve}
-              className='border-solid border p-3 w-4/5 mt-2 bg-black/40'
+              className='border-solid border p-2 w-4/5 mt-2 bg-black/40 text-sm'
             >
               제출하기
             </button>
