@@ -7,8 +7,6 @@ import './globals.css';
 import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import bgImage from '@/public/img/bg_airplane.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
