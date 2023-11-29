@@ -32,7 +32,7 @@ export default function Home() {
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
-          <div className='flex flex-col items-center gap-2 absolute bottom-44'>
+          <div className='flex flex-col items-center gap-2 absolute bottom-44 opacity-30'>
             <p className='text-sm'>아래로 스크롤</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -71,7 +71,7 @@ export default function Home() {
           >
             예매하기
           </button>
-          <div className='flex flex-col items-center gap-2 absolute bottom-44'>
+          <div className='flex flex-col items-center gap-2 absolute bottom-44 opacity-30'>
             <p className='text-sm'>일시/장소</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'

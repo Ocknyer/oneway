@@ -37,11 +37,12 @@ const CompleteSection = () => {
         <span className='text-orange-400 font-bold'>똑같이</span> 입력해주시기 바랍니다.
       </p>
       <p className='leading-7 mt-2 font-bold bg-black/60 px-2'>
+        하나은행{' '}
         <button
-          onClick={() => onClickCopyToClipboard('31201168414007')}
+          onClick={() => onClickCopyToClipboard('하나은행 31201168414007')}
           className='underline decoration-solid'
         >
-          하나은행 312-0116-8414-007
+          312-0116-8414-007
         </button>
         <br />
         예금주: 김대운
