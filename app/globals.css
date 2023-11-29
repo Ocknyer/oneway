@@ -295,7 +295,7 @@ button:disabled {
 
 @keyframes fadeOut {
   0% {
-    opacity: 0.3;
+    opacity: 0.4;
   }
   100% {
     opacity: 0;

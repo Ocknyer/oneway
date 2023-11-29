@@ -28,9 +28,9 @@ export default function Home() {
   };
 
   const handleScroll2 = () => {
-    if (window.scrollY >= 1000) {
+    if (window.scrollY >= 900) {
       setScroll2('flex scroll-bottom');
-    } else if (window.scrollY < 1000) {
+    } else if (window.scrollY < 900) {
       setScroll2('flex');
     }
   };
@@ -60,7 +60,7 @@ export default function Home() {
             <h1 className='text-3xl drop-shadow-xl'>'편도'</h1>
             <h2 className='text-xl drop-shadow-2xl'>ONE WAY</h2>
           </div>
-          <div className={`${scroll1} flex-col items-center gap-2 absolute bottom-44 opacity-30`}>
+          <div className={`${scroll1} flex-col items-center gap-2 absolute bottom-44 opacity-40`}>
             <p className='text-sm'>아래로 스크롤</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -78,13 +78,11 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        <section
+        {/* <section
           className='flex flex-col items-center gap-y-3 relative'
           style={{ height: `${100 * vh}px` }}
-        >
-          {/* <section
-          className='h-full flex flex-col items-center gap-y-3 mb-96 relative'
         > */}
+        <section className='h-full flex flex-col items-center gap-y-3 mb-96 relative'>
           <p className='text-xl font-bold'>티켓</p>
           <p className='text-lg'>예매: 10,000₩ / 현매: 12,000₩</p>
           <p className='text-xs'>&#8251; 조기 매진 시 현매는 불가능합니다.</p>
@@ -99,7 +97,7 @@ export default function Home() {
           >
             예매하기
           </button>
-          <div className={`${scroll2} flex-col items-center gap-2 mt-8 opacity-30`}>
+          <div className={`${scroll2} flex-col items-center gap-2 mt-8 opacity-40`}>
             <p className='text-sm'>일시/장소</p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -117,11 +115,11 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        <section
+        {/* <section
           className='flex flex-col items-center justify-center gap-y-3 text-center'
           style={{ height: `${100 * vh}px` }}
-        >
-          {/* <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'> */}
+        > */}
+        <section className='h-full flex flex-col items-center gap-y-3 mb-48 text-center'>
           <p className='text-xl font-bold'>일시</p>
           <p className='text-lg mb-6'>
             2023.12.30.토요일
