@@ -6,13 +6,20 @@ import './globals.css';
 import NavBar from '@/components/NavBar';
 import { useVh } from '@/hooks/useVh';
 import { usePathname } from 'next/navigation';
+import { Nanum_Myeongjo } from 'next/font/google';
+
+const nanumMyeongjo = Nanum_Myeongjo({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const vh = useVh();
   const pathname = usePathname();
 
   return (
-    <html lang='ko'>
+    <html lang='ko' className={nanumMyeongjo.className}>
       <head>
         <title>밴드 파수꾼 연말공연 '편도'</title>
         <meta property='og:description' content='밴드 파수꾼 연말공연 홍보/예매 홈페이지' />
