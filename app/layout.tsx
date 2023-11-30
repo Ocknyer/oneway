@@ -23,9 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <title>밴드 파수꾼 연말공연 '편도'</title>
         <meta property='og:description' content='밴드 파수꾼 연말공연 홍보/예매 홈페이지' />
-        {/* <meta property='og:image' content='/public/image/ogimage.jpg' />
+        <meta property='og:image' content='<%= Url.Content("~/public/image/ogimage.jpg") %>' />
         <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' /> */}
+        <meta property='og:image:height' content='630' />
         <script
           defer
           type='text/javascript'
