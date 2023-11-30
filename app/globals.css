@@ -20,30 +20,6 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb)); */
-}
-
-/* body {
-  background: linear-gradient(-45deg, #b7c9d9, #429ef4, #e78524, #440a4b);
-  background-size: 400% 400%;
-  animation: backgroundChange 15s ease infinite;
-} */
-
-@keyframes backgroundChange {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
-}
-
 html,
 body,
 div,
@@ -135,25 +111,9 @@ video {
 }
 
 @font-face {
-  font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Nanum Myeongjo';
   font-weight: 500;
   src: url('/fonts/NanumMyeongjo.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'HSBombaram21-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -199,7 +159,6 @@ table {
 
 p,
 a {
-  font-family: 'Nanum Myeongjo';
   font-weight: normal;
   text-decoration: none;
 }
@@ -208,12 +167,11 @@ header,
 h1,
 h2,
 h3 {
-  font-family: 'Nanum Myeongjo';
   font-weight: 700;
 }
 
 html {
-  font-family: 'Nanum Myeongjo';
+  /* font-family: 'Nanum Myeongjo'; */
   font-size: 16px;
   -webkit-text-size-adjust: none;
 
@@ -225,7 +183,7 @@ html {
 }
 
 body {
-  font-family: 'Nanum Myeongjo', serif;
+  /* font-family: 'Nanum Myeongjo', serif; */
   color: white;
 }
 
