@@ -21,7 +21,7 @@ const LyricModal = ({ onClickOpenLyricModal, lyrics }: ModalProps) => {
         </svg>
       </button>
       <div>
-        <p className='text-center whitespace-pre text-sm'>파수꾼 - {lyrics.songName}</p>
+        <p className='text-center whitespace-pre text-sm font-bold'>파수꾼 - {lyrics.songName}</p>
         <br />
         <p className='text-center whitespace-pre text-sm leading-6'>{lyrics.lyric}</p>
       </div>
