@@ -210,6 +210,18 @@ body {
   box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
 }
 
+.lyric-btn,
+.lyric-modal {
+  backdrop-filter: blur(30px);
+  background-color: rgba(221, 221, 221, 0.1);
+}
+
+.lyric-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 input::placeholder {
   font-size: 0.9rem;
 }
