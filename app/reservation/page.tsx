@@ -34,8 +34,7 @@ const Reservation = () => {
     phone_number: '',
   });
 
-  const isFilled =
-    inputs.name !== '' && inputs.count !== '' && inputs.phone_number.length >= 13 && isAgree;
+  const isFilled = inputs.name !== '' && inputs.count !== '' && inputs.phone_number.length >= 13 && isAgree;
 
   const { name, count, phone_number } = inputs;
 
@@ -54,12 +53,7 @@ const Reservation = () => {
     }
 
     if (name === 'count') {
-      const regex =
-        60 - restTicket >= 3
-          ? /^[1-3]{0,1}$/
-          : 60 - restTicket === 2
-          ? /^[1-2]{0,1}$/
-          : /^[1]{0,1}$/;
+      const regex = 60 - restTicket >= 3 ? /^[1-3]{0,1}$/ : 60 - restTicket === 2 ? /^[1-2]{0,1}$/ : /^[1]{0,1}$/;
       if (regex.test(e.target.value)) {
         setInputs({ ...inputs, count: e.target.value });
       }
@@ -76,9 +70,7 @@ const Reservation = () => {
     if (inputs.phone_number.length === 13) {
       setInputs({
         ...inputs,
-        phone_number: inputs.phone_number
-          .replace(/-/g, '')
-          .replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
+        phone_number: inputs.phone_number.replace(/-/g, '').replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3'),
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -89,7 +81,7 @@ const Reservation = () => {
     const q = query(collection(fireStore, 'booker'), orderBy('createdAt'));
     const querySnapshot = await getDocs(q);
 
-    querySnapshot.forEach(doc => {
+    querySnapshot.forEach((doc) => {
       setDataList((prev: any) => [...prev, { ...doc.data(), id: doc.id }]);
     });
   };
@@ -116,9 +108,7 @@ const Reservation = () => {
   // 예매내역 확인
   const checkIsBooked = (inputs: Input) => {
     // const checkName = reservedList.filter((item: any) => item.name === inputs.name);
-    const checkPhoneNumber = reservedList.filter(
-      (item: any) => item.phone_number === inputs.phone_number,
-    );
+    const checkPhoneNumber = reservedList.filter((item: any) => item.phone_number === inputs.phone_number);
 
     return checkPhoneNumber.length > 0 ? true : false;
   };
@@ -129,7 +119,7 @@ const Reservation = () => {
 
     if (checkIsBooked(inputs)) {
       alert(
-        '입력하신 휴대전화번호로 기존 예매 정보가 존재합니다.\n\n추가 예매를 원하시면 010-3364-0633(파수꾼 김대운)으로 문의 주시기 바랍니다.',
+        '입력하신 휴대전화번호로 기존 예매 정보가 존재합니다.\n\n추가 예매를 원하시면 010-3364-0633(파수꾼 김대운)으로 문의 주시기 바랍니다.'
       );
       setInputs({ ...inputs, phone_number: '' });
       return;
@@ -152,10 +142,7 @@ const Reservation = () => {
   };
 
   return (
-    <main
-      className='flex flex-col items-center justify-center p-6'
-      style={{ height: `${100 * vh}px` }}
-    >
+    <main className='flex flex-col items-center justify-center p-6' style={{ height: `${100 * vh}px` }}>
       {!dataList.length ? (
         <svg className='animate-spin h-10 w-10 mr-3' fill='#fff' viewBox='0 0 48 48'>
           <g id='_레이어_1-2' data-name='레이어 1'>
@@ -167,7 +154,7 @@ const Reservation = () => {
         </svg>
       ) : restTicket >= 60 ? (
         <p>전석 매진 되었습니다.</p>
-      ) : !isBooked && restTicket < 60 ? (
+      ) : isBooked && restTicket < 60 ? (
         <section className='flex flex-col items-center p-0'>
           {/* <h1 className='mb-4'>'편도' 예매하기</h1> */}
           <p className='mb-4 text-lg'>잔여 {60 - restTicket}석</p>
@@ -221,12 +208,7 @@ const Reservation = () => {
             </div>
 
             <div className='flex gap-2'>
-              <input
-                id='agree'
-                type='checkbox'
-                className='border-none'
-                onChange={() => setIsAgree(prev => !prev)}
-              />
+              <input id='agree' type='checkbox' className='border-none' onChange={() => setIsAgree((prev) => !prev)} />
               <label htmlFor='agree' className='text-xs'>
                 개인정보제공에 동의합니다.
               </label>
@@ -241,8 +223,13 @@ const Reservation = () => {
             </button>
           </form>
         </section>
-      ) : isBooked ? (
-        <CompleteSection />
+      ) : !isBooked ? (
+        // <CompleteSection />
+        <div className='flex flex-col items-center gap-2'>
+          <p>예매가 종료되었습니다.</p>
+          <p>잔여석에 한해 현장구매(12,000₩) 가능합니다.</p>
+          <p>문의 : 010-3364-0633 파수꾼 김대운</p>
+        </div>
       ) : null}
     </main>
   );
